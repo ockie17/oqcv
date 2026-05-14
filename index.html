@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Okky F. Irawan — COO & Learning Technology Leader</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0f0f;
+    --ink-light: #3a3a3a;
+    --ink-muted: #888;
+    --paper: #f5f2ed;
+    --paper-dark: #ede9e2;
+    --gold: #b8974a;
+    --gold-light: #d4b06a;
+    --rule: #d0cbc2;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    top: 0; right: -1px; bottom: 0;
+    width: 2px;
+    background: var(--gold);
+  }
+
+  .hero-left .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-left h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 5vw, 76px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-left h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-left .title-block {
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-left .role {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.04em;
+  }
+
+  .hero-left .sub-role {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .hero-left .contact-block {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.55);
+    font-size: 13px;
+    font-family: 'DM Mono', monospace;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-item:hover { color: var(--gold-light); }
+  .contact-item .dot {
+    width: 5px; height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-right {
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    position: relative;
+  }
+
+  .years-badge {
+    position: absolute;
+    top: 48px; right: 48px;
+    width: 96px; height: 96px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.2s forwards;
+  }
+
+  .years-badge .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .years-badge .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .hero-right .summary-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  .hero-right .summary-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--ink-light);
+    max-width: 460px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+
+  .hero-right .summary-text strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 52px;
+    border-top: 1px solid var(--rule);
+    padding-top: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1s forwards;
+  }
+
+  .stat-item {
+    padding-right: 24px;
+    border-right: 1px solid var(--rule);
+  }
+  .stat-item:last-child { border-right: none; padding-right: 0; padding-left: 24px; }
+  .stat-item:nth-child(2) { padding-left: 24px; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .stat-unit {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--gold);
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* ─── SECTION BASE ─── */
+  section {
+    padding: 100px 0;
+  }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    max-width: 80px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 60px;
+  }
+
+  /* ─── EXPERTISE ─── */
+  .expertise { background: var(--white); }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .expertise-card {
+    background: var(--paper);
+    padding: 36px 28px;
+    transition: background 0.3s, transform 0.3s;
+    cursor: default;
+  }
+
+  .expertise-card:hover {
+    background: var(--ink);
+    transform: translateY(-4px);
+  }
+
+  .expertise-card:hover .exp-icon { color: var(--gold); }
+  .expertise-card:hover .exp-title { color: var(--white); }
+  .expertise-card:hover .exp-desc { color: rgba(255,255,255,0.5); }
+
+  .exp-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--gold);
+    transition: color 0.3s;
+  }
+
+  .exp-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin-bottom: 10px;
+    transition: color 0.3s;
+    text-transform: uppercase;
+  }
+
+  .exp-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+    transition: color 0.3s;
+  }
+
+  /* ─── EXPERIENCE TIMELINE ─── */
+  .experience { background: var(--paper); }
+
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), var(--rule));
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 52px;
+    padding-left: 40px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px; top: 8px;
+    width: 11px; height: 11px;
+    border: 2px solid var(--gold);
+    background: var(--paper);
+    border-radius: 50%;
+  }
+
+  .timeline-item.current::before {
+    background: var(--gold);
+  }
+
+  .tl-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .tl-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  .tl-company {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+    margin-bottom: 16px;
+  }
+
+  .tl-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--ink-light);
+    border: 1px solid var(--rule);
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  /* ─── SKILLS INFOGRAPHIC ─── */
+  .skills-section { background: var(--ink); }
+
+  .skills-section .section-label { color: var(--gold-light); }
+  .skills-section .section-title { color: var(--white); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  .skill-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .skill-bar-item {
+    margin-bottom: 18px;
+  }
+
+  .skill-bar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .skill-bar-track {
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .tech-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tech-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 6px 14px;
+    border-radius: 100px;
+    transition: all 0.25s;
+    cursor: default;
+  }
+
+  .tech-pill:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    background: rgba(184,151,74,0.08);
+  }
+
+  /* ─── CERTIFICATIONS ─── */
+  .certs { background: var(--paper); }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+  }
+
+  .cert-card {
+    background: var(--white);
+    padding: 28px 22px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .cert-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  .cert-issuer {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .cert-name {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
+  /* ─── PROJECTS ─── */
+  .projects { background: var(--white); }
+
+  .project-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .project-item {
+    background: var(--paper);
+    padding: 32px 36px;
+    border-left: 3px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .project-item:hover { border-color: var(--gold); }
+
+  .proj-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+  }
+
+  .proj-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .proj-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-muted);
+  }
+
+  .proj-client {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* ─── LANGUAGES ─── */
+  .languages-section {
+    background: var(--paper-dark);
+    padding: 80px 0;
+  }
+
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 600px;
+  }
+
+  .lang-item {}
+
+  .lang-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .lang-dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  .lang-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--rule);
+  }
+
+  .lang-dot.filled { background: var(--gold); }
+
+  /* ─── FOOTER / CTA ─── */
+  .footer-cta {
+    background: var(--ink);
+    padding: 100px 0;
+    text-align: center;
+  }
+
+  .footer-cta .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .footer-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 5vw, 68px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 40px;
+  }
+
+  .footer-cta h2 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .cta-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 32px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    transition: all 0.3s;
+  }
+
+  .cta-btn:hover {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  .cta-btn.filled {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  .cta-btn.filled:hover {
+    background: transparent;
+    color: var(--gold);
+  }
+
+  .copyright {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+    margin-top: 60px;
+    letter-spacing: 0.15em;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left::after { display: none; }
+    .hero-right { padding-top: 60px; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .cert-grid { grid-template-columns: 1fr 1fr; }
+    .project-list { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; gap: 40px; }
+    .stat-row { grid-template-columns: 1fr; gap: 24px; }
+    .stat-item { border-right: none; border-bottom: 1px solid var(--rule); padding: 0 0 24px; }
+    .stat-item:last-child { padding: 0; border-bottom: none; }
+  }
+
+  @media (max-width: 600px) {
+    .expertise-grid, .cert-grid { grid-template-columns: 1fr; }
+    .lang-grid { grid-template-columns: 1fr; }
+    .container { padding: 0 24px; }
+    .hero-left, .hero-right { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─── -->
+<header class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Professional Profile</div>
+    <h1>Okky F.<br><em>Irawan</em></h1>
+    <div class="title-block">
+      <div class="role">Chief Operating Officer</div>
+      <div class="sub-role">PT Pinteraktif Media · April 2020 – Present</div>
+    </div>
+    <div class="contact-block">
+      <a href="tel:+6282121178909" class="contact-item">
+        <span class="dot"></span>+62 821 2117 8909
+      </a>
+      <a href="mailto:ockieds@icloud.com" class="contact-item">
+        <span class="dot"></span>ockieds@icloud.com
+      </a>
+      <a href="https://www.linkedin.com/in/okky-irawan/" target="_blank" class="contact-item">
+        <span class="dot"></span>linkedin.com/in/okky-irawan
+      </a>
+      <a href="#" class="contact-item">
+        <span class="dot"></span>Cimahi, West Java, Indonesia
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="years-badge">
+      <span class="num">17</span>
+      <span class="label">Years<br>Exp.</span>
+    </div>
+    <div class="summary-label">Professional Summary</div>
+    <p class="summary-text">
+      Dynamic leader spanning <strong>operational management</strong>, 
+      <strong>workforce development</strong>, and <strong>technology integration</strong>. 
+      Proven track record driving digital transformation, fostering IT literacy, 
+      and building high-performing teams across public and private sectors.
+    </p>
+    <div class="stat-row">
+      <div class="stat-item">
+        <div class="stat-num">5<span class="stat-unit">+</span></div>
+        <div class="stat-label">Departments<br>Managed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">20<span class="stat-unit">+</span></div>
+        <div class="stat-label">Major Projects<br>Delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">30<span class="stat-unit">+</span></div>
+        <div class="stat-label">Institutional<br>Clients</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── EXPERTISE ─── -->
+<section class="expertise">
+  <div class="container">
+    <div class="section-label reveal">Core Competencies</div>
+    <h2 class="section-title reveal">Areas of<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;">Expertise</em></h2>
+    <div class="expertise-grid">
+      <div class="expertise-card reveal">
+        <div class="exp-icon">⚙</div>
+        <div class="exp-title">Strategic Operations</div>
+        <div class="exp-desc">Planning, budgeting, KPI implementation, risk management, and cross-department alignment.</div>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="exp-icon">🎓</div>
+        <div class="exp-title">Learning Technology</div>
+        <div class="exp-desc">LMS development & deployment (Canvas, Moodle, Talent, Tutor), e-learning content, and digital training platforms.</div>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="exp-icon">💡</div>
+        <div class="exp-title">Digital Transformation</div>
+        <div class="exp-desc">IT literacy programs, technology adoption, process optimization, and organizational change management.</div>
+      </div>
+      <div class="expertise-card reveal">
+        <div class="exp-icon">📊</div>
+        <div class="exp-title">Data & Performance</div>
+        <div class="exp-desc">Reporting with Google Looker, Power BI, and Tableau; continuous improvement frameworks and M&E.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─── -->
+<section class="experience">
+  <div class="container">
+    <div class="section-label reveal">Career Journey</div>
+    <h2 class="section-title reveal">Work<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;">Experience</em></h2>
+    <div class="timeline">
+
+      <div class="timeline-item current reveal">
+        <div class="tl-period">April 2020 — Present</div>
+        <div class="tl-title">Chief Operating Officer</div>
+        <div class="tl-company">PT Pinteraktif Media</div>
+        <p style="font-size:13.5px;color:var(--ink-light);line-height:1.7;max-width:680px;">
+          Led operational strategies across five departments, oversaw budgeting and financial planning, implemented KPIs, and championed digital transformation. Directed senior leadership teams and collaborated with the CEO and board to align operations with strategic priorities.
+        </p>
+        <div class="tl-tags">
+          <span class="tag">Operations Management</span>
+          <span class="tag">Digital Transformation</span>
+          <span class="tag">KPI Implementation</span>
+          <span class="tag">Team Leadership</span>
+          <span class="tag">Change Management</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="tl-period">August 2012 — March 2020</div>
+        <div class="tl-title">Learning Technology Specialist</div>
+        <div class="tl-company">PT Pinteraktif Media · Direktorat Sistem & TI ITB · ComLabs ITB</div>
+        <p style="font-size:13.5px;color:var(--ink-light);line-height:1.7;max-width:680px;">
+          Implemented and managed Learning Management Systems, created interactive e-learning modules with subject matter experts, evaluated emerging learning technologies, and provided technical support for seamless platform adoption.
+        </p>
+        <div class="tl-tags">
+          <span class="tag">LMS Management</span>
+          <span class="tag">E-Learning Development</span>
+          <span class="tag">Training Accessibility</span>
+          <span class="tag">Technical Support</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="tl-period">January 2010 — July 2012</div>
+        <div class="tl-title">IT Literacy Specialist</div>
+        <div class="tl-company">USDI ITB · ComLabs ITB</div>
+        <p style="font-size:13.5px;color:var(--ink-light);line-height:1.7;max-width:680px;">
+          Developed and delivered IT literacy programs, collaborated with IT teams to design user-friendly systems, conducted skill-gap assessments, and increased technology adoption through effective training.
+        </p>
+        <div class="tl-tags">
+          <span class="tag">IT Literacy</span>
+          <span class="tag">Needs Assessment</span>
+          <span class="tag">Training Design</span>
+          <span class="tag">Digital Competency</span>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="tl-period">June — December 2009</div>
+        <div class="tl-title">Training Manager</div>
+        <div class="tl-company">ComLabs ITB</div>
+        <p style="font-size:13.5px;color:var(--ink-light);line-height:1.7;max-width:680px;">
+          Designed comprehensive training programs aligned with organizational objectives, led training professionals for in-person and online delivery, and developed scalable frameworks supporting company growth.
+        </p>
+        <div class="tl-tags">
+          <span class="tag">Training Program Design</span>
+          <span class="tag">Team Management</span>
+          <span class="tag">Online Learning</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ─── -->
+<section class="skills-section">
+  <div class="container">
+    <div class="section-label reveal">Technical Proficiency</div>
+    <h2 class="section-title reveal">Skills &<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;">Tools</em></h2>
+    <div class="skills-grid">
+      <div>
+        <div class="skill-group-title">Core Competency Levels</div>
+        <div class="skill-bar-item reveal">
+          <div class="skill-bar-label"><span>Learning Management Systems</span><span>95%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-bar-item reveal">
+          <div class="skill-bar-label"><span>Strategic Operations</span><span>92%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+        </div>
+        <div class="skill-bar-item reveal">
+          <div class="skill-bar-label"><span>Digital Transformation</span><span>90%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-bar-item reveal">
+          <div class="skill-bar-label"><span>Project Management</span><span>88%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-bar-item reveal">
+          <div class="skill-bar-label"><span>Data Analytics & Reporting</span><span>82%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+        </div>
+        <div class="skill-bar-item reveal">
+          <div class="skill-bar-label"><span>Web Development</span><span>75%</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-title">Technology Stack</div>
+        <div class="tech-cloud reveal">
+          <span class="tech-pill">Canvas LMS</span>
+          <span class="tech-pill">Moodle</span>
+          <span class="tech-pill">Talent LMS</span>
+          <span class="tech-pill">Tutor LMS</span>
+          <span class="tech-pill">Google Looker</span>
+          <span class="tech-pill">Power BI</span>
+          <span class="tech-pill">Tableau</span>
+          <span class="tech-pill">Jira & Confluence</span>
+          <span class="tech-pill">Airtable</span>
+          <span class="tech-pill">Notion</span>
+          <span class="tech-pill">Slack</span>
+          <span class="tech-pill">Google Workspace</span>
+          <span class="tech-pill">Microsoft 365</span>
+          <span class="tech-pill">Figma</span>
+          <span class="tech-pill">Canva</span>
+          <span class="tech-pill">WordPress</span>
+          <span class="tech-pill">Webflow</span>
+          <span class="tech-pill">Framer</span>
+          <span class="tech-pill">Vercel V0</span>
+          <span class="tech-pill">Loveable</span>
+          <span class="tech-pill">Miro</span>
+          <span class="tech-pill">Trello</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CERTIFICATIONS ─── -->
+<section class="certs">
+  <div class="container">
+    <div class="section-label reveal">Credentials</div>
+    <h2 class="section-title reveal">Certifications &<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;">Achievements</em></h2>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-issuer">Adobe</div>
+        <div class="cert-name">Adobe Certified Associate<br>Adobe Certified Educator</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-issuer">Google Cloud</div>
+        <div class="cert-name">Digital Transformation · Data & Cloud Infrastructure · Cloud Security & Operations</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-issuer">Microsoft</div>
+        <div class="cert-name">Technology Associate<br>Office Specialist<br>Certified Educator</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-issuer">HubSpot</div>
+        <div class="cert-name">InBound Marketing<br>Content Marketing</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-issuer">Certiport</div>
+        <div class="cert-name">Certification Officer License</div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;background:var(--paper-dark);padding:36px 40px;border-left:3px solid var(--gold);" class="reveal">
+      <div class="cert-issuer" style="margin-bottom:12px;">Professional Achievement</div>
+      <p style="font-size:15px;color:var(--ink-light);line-height:1.6;">
+        Recognized by the <strong style="color:var(--ink);">Directorate General of Information and Public Diplomacy, Ministry of Foreign Affairs Republic of Indonesia</strong> for valuable contribution to <em>Information and Communication Technology Support for Palestinian SMEs Development</em>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ─── -->
+<section class="projects">
+  <div class="container">
+    <div class="section-label reveal">Portfolio</div>
+    <h2 class="section-title reveal">Major<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;">Projects</em></h2>
+    <div class="project-list">
+      <div class="project-item reveal">
+        <div class="proj-year">2022 — 2024</div>
+        <div class="proj-name">World Bank — Management Information System</div>
+        <div class="proj-client">BPDLH, Kementerian Keuangan Republik Indonesia</div>
+        <div class="proj-role">Co. Project Manager & Monitoring/Evaluation</div>
+      </div>
+      <div class="project-item reveal">
+        <div class="proj-year">2022 — 2023</div>
+        <div class="proj-name">E-Learning & Virtual Reality System, POLRI</div>
+        <div class="proj-client">MABES — Kepolisian Republik Indonesia</div>
+        <div class="proj-role">Monitoring & Evaluation</div>
+      </div>
+      <div class="project-item reveal">
+        <div class="proj-year">2021 — 2022</div>
+        <div class="proj-name">World Bank — Corporate Website, BPDLH</div>
+        <div class="proj-client">Kementerian Keuangan Republik Indonesia</div>
+        <div class="proj-role">Project Manager</div>
+      </div>
+      <div class="project-item reveal">
+        <div class="proj-year">2020 — 2021</div>
+        <div class="proj-name">LMS Customization — OJK</div>
+        <div class="proj-client">Otoritas Jasa Keuangan, Kementerian Keuangan</div>
+        <div class="proj-role">Project Manager</div>
+      </div>
+      <div class="project-item reveal">
+        <div class="proj-year">2020 — 2021</div>
+        <div class="proj-name">Smart AI Vision — Military Academy</div>
+        <div class="proj-client">Akademi Militer, Kementerian Pertahanan RI</div>
+        <div class="proj-role">Monitoring & Evaluation</div>
+      </div>
+      <div class="project-item reveal">
+        <div class="proj-year">2020 — 2021</div>
+        <div class="proj-name">LMS — GOLKAR Institute</div>
+        <div class="proj-client">Partai GOLKAR</div>
+        <div class="proj-role">Project Manager & Developer</div>
+      </div>
+      <div class="project-item reveal">
+        <div class="proj-year">2020 — 2021</div>
+        <div class="proj-name">LMS — PT Astra Honda Motor</div>
+        <div class="proj-client">PT Astra Honda Motor</div>
+        <div class="proj-role">Monitoring & Evaluation</div>
+      </div>
+      <div class="project-item reveal">
+        <div class="proj-year">2019 — 2020</div>
+        <div class="proj-name">Online Meeting & Webinar Apps — BSSN</div>
+        <div class="proj-client">Badan Siber dan Sandi Negara</div>
+        <div class="proj-role">Monitoring & Evaluation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LANGUAGES ─── -->
+<section class="languages-section">
+  <div class="container">
+    <div class="section-label reveal">Communication</div>
+    <h2 class="section-title reveal" style="margin-bottom:40px;">Languages</h2>
+    <div class="lang-grid">
+      <div class="lang-item reveal">
+        <div class="lang-name">Indonesian</div>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+        </div>
+      </div>
+      <div class="lang-item reveal">
+        <div class="lang-name">English</div>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot"></div>
+        </div>
+      </div>
+      <div class="lang-item reveal">
+        <div class="lang-name">Sundanese</div>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot"></div>
+          <div class="lang-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER CTA ─── -->
+<footer class="footer-cta">
+  <div class="container">
+    <div class="eyebrow">Let's Connect</div>
+    <h2>Open to new<br><em>opportunities</em></h2>
+    <div class="cta-links">
+      <a href="mailto:ockieds@icloud.com" class="cta-btn filled">Send an Email</a>
+      <a href="https://www.linkedin.com/in/okky-irawan/" target="_blank" class="cta-btn">LinkedIn Profile</a>
+    </div>
+    <div class="copyright">© 2026 Okky Fajar Irawan — All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for scroll reveals
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Animate skill bars when visible
+        const bars = entry.target.querySelectorAll('.skill-bar-fill');
+        bars.forEach(bar => {
+          setTimeout(() => {
+            bar.style.width = bar.dataset.width + '%';
+          }, 100);
+        });
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Also trigger bars that appear in already-revealed containers
+  document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+    const parentObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.width = entry.target.dataset.width + '%';
+          }, 300);
+          parentObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    parentObserver.observe(bar);
+  });
+</script>
+</body>
+</html>
